@@ -318,36 +318,23 @@
   margin-bottom:11px;
 }
 .albiart-footer .payment-badge{
+  width:62px;
   height:40px;
-  min-width:62px;
-  padding:0 10px;
+  padding:0;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   background:#f7f7f5;
   border:1px solid #ddd;
   border-radius:3px;
-  color:#111;
-  font-size:16px;
-  font-weight:800;
+  overflow:hidden;
 }
-.albiart-footer .payment-badge.visa{color:#1a3fa0;font-style:italic}
-.albiart-footer .payment-badge.mastercard{
-  font-size:0;
-  position:relative;
+.albiart-footer .payment-badge img{
+  width:60px;
+  height:40px;
+  object-fit:contain;
+  display:block;
 }
-.albiart-footer .payment-badge.mastercard:before,
-.albiart-footer .payment-badge.mastercard:after{
-  content:"";
-  width:21px;
-  height:21px;
-  border-radius:50%;
-  position:absolute;
-}
-.albiart-footer .payment-badge.mastercard:before{background:#e5222e;left:17px}
-.albiart-footer .payment-badge.mastercard:after{background:#f5a000;right:17px;opacity:.92}
-.albiart-footer .payment-badge.apple{font-size:14px}
-.albiart-footer .payment-badge.gift{font-size:19px}
 .albiart-footer .secure-copy{
   margin:0 0 12px;
   color:#999;
@@ -404,10 +391,10 @@
   <div class="secure-options">
     <div class="secure-title"><span class="lock">🔒</span><span>Secure options</span></div>
     <div class="payment-badges" aria-label="Payment options">
-      <span class="payment-badge visa">VISA</span>
-      <span class="payment-badge mastercard" aria-label="Mastercard"></span>
-      <span class="payment-badge apple">Pay</span>
-      <span class="payment-badge gift" aria-label="Etsy Gift Cards">🎁</span>
+      <span class="payment-badge"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADpklEQVR4nO1Yz0sbQRT+tphIICIYQk2TNHgoFISCjT1I/AtUgieVnAW9lF4ET62UnoRcWg+tkLNoL5Wg/QsMHppU6MlbSTZxV4KCRBDXw/SQvnVmdrNdE6y45jvtzM6+fd97b775oTDG8JDw6K4d+N/ooYdjXWfG1dVd+nJr8Pt8eDw4qAB/CddqNRaNRpW7det2QRwVXdMYsfc6jnWdPfJqGdvBuLp6eKLVJex1dAl7HV3CXkeXsNfR8+8hwF7xzPYMOT7ab7slLdcumKoZZjse8SMRDSi8HerjvwGAQukcAPD0ib+lffkfsi0nuCJcOTKwf3COzZ0ToT8e8bNP7xIWx7I5XRhb/zGqbOTr7M2HstlX3B42n1fXqyyb0+1+zT6+TSCTDgv2w6+KQgK+fX6GRDTghoq7ks6kw8raypBS3B7G0vyg2a9qBrI5zTKeJzs3FQIA7B+cC2MoI9OLh63IAgBSyaDQfv3+t6XaCqWGGxoAXGaYkIgGlOWFGPYPzhmVXuXIEMZs5OuCQ7OTAxanKAgb+bppB2iW5uzkAOKRXrOi5FKVqwywBtMJNyJMGBsJmnONn6sA8PX7tUOpZNAsd35cbNBn6+jP/AuTXCYdxtrKkPCeD2Y84jdtykF3QlsqnUr2CW0So73imZCxmYmQ8P7a2V4AgKpdCnZW16uOF2x8MKlymnaMlsIqoy3C8YhfaFO5bu2eCv0kNnIGaF5SQAjZnI6X6V/MjrgczOWFmMLPb7dZbotwIhoQflbVm5cIdmIFtBasTDqs8CIIkBDqFnHig0m2qVKa34nV0gptbzzGRq4Jq9qlRax4InaCRVheiCnF7WGLGm/unAg2+WBSOZMWANbqaoW2CfOOV44MYX7NTYUEdeUFiw8UIRENKNtfnluyTTblYBZKDayuVxlV1k3QlkqTkwAY0CTEk+IFRXaWMlmuXTB5yZmbCoFfk6lk5bXebt0m4XLanQEdEAaazvNC0nTSeUtIJLM5HYVSg6WSfRgbCULVLi1lOTYSxEa+zuSlrxUKpQbGR/sdx3REeGYiZCG8NB8R2rxg8fO0UGpA1Qxs7pzYbiZSySAy6bAyvXjI+D7Z/tbuqfm9mw1IxxmWIe97ecESVdU+a7TbWl6IKeXahWVdt6keRoTdLE1KpVJh8Xi87Yt4pxOQ03v5dARYT0jyqctuqrgZQ1BVlXVM+D5BVVX24C4AuoS9ji5hr6NL2Ot4eIR9vo52l/cKPl8P/gAJmtIVyTNAqgAAAABJRU5ErkJggg==" alt="Visa"></span>
+      <span class="payment-badge"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADqElEQVR4nOWZPU/bQBjH/+cXDMTlRULCahIREVRGJBYUeUB04QMAolNR1Q4dGZipyhykLN0qqnYClX6ADhVliBAjUwWiiAhSORISbRogIbavA3VKILHPvgRU5b8l9/i55+fnnvO9EEopWknCfQdw15IAIGcY9LJcvu9YmqI2WUa/phHnt5TNZmk4HCZuD/3vus5IWqWGc4ZB+zWNtEwNOyXbMsCOWg5YarRD8yBTmRSkwYFAk6GVz1CxK9izXuIGvni3Ss3NbZQ3t2AfHle1CbEIFWNRtD2dgjyeqPsCzL1Vaue2QY0t0MKVjzJAAYCoERAtASE+DaJGwPsiAs/SZ6+StPRh/Rakm0IrySpwc2+VmukFX/1KehLSoye+oY+Ojmg0GiW+gc2DDD17voDy1y2/fQIAhHAfut6+hH32CXb+WzAfWgKinvSV7UDApY00/f14NlCQjmSthO7JE5SHe2FpnXy+ptLM0A4w8yzdSFgAkHdPIRrnXP7Mz7Ow8hlfQ5QJ2DzIcMOKqlWBdSTvnoIUrcA+aeHYNzQTcOn9x8BBOVL105r/izm+LNPCMex99vg8gc2DDL1YSvHEBFkrQdZKNdukwzz30LZ2UsxZ9gRuRHaVuDuQ8Kv2y/Aj1ix7AvNmV1QttA+5A4vGOVctA+xZdgW+vkwMqnpD+VYgP/mzzNSPW2MjhrMQ4sucH1HDezHU9N2SoJpsdg2oY6Z+3BrtTJa7A1FlyzBvDQOAndv2tGl6hq2CyGRH29ns3ERCYU8bV2BpfIw7CLvAtgOl7fxbc6JGPG1cgYVYlDsI+4wxwwp/hqF6x+sKrEzoRIh5vzU3Ffc7mYY1786JqBFID3XPnZNnDcvjCa5AAKBsKK7tvLAAIMSn2ey8DNrm2By5ycy5A9vd7u0skkcXmPbFnsDKhE6UuRmuYIr7nXWzbPco3BkWR+aZbZk+Sx2L8+Ct5UK691Yt03YRlyN9XH6JGoE8ukAatlsCro5bu76scUFbBRGl/VAVdHm4N7A/4O9ENbkGAMxHPcwLD2lwgIRWlrmgz3ceVKAvR/pg9/DVrqgv+z629bXSUiZ0bujiySDoizeg/cF9CFoC8lSa6TN0U3d6Lt2xOI/Q63+zqbm3Sq2dVOXwnUV3fi59U6WNNC0upWAdHtWEV+ZmII2PoeNZ/SDNH2lqf1+vunm4LmFoBkJ8OlBGHTUM+KZ475aada/kADf8Mi3oBZqjZl2iOWq569KWAZblq8H8B4pbh9NcgHC9AAAAAElFTkSuQmCC" alt="Mastercard"></span>
+      <span class="payment-badge"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADk0lEQVR4nO1ZwW7aSBj+HIVKgdy3UoRNbiHkETIipyYlb2DTvYWkj2Dt7qUQzSOQa0zxG8TtnkIEz9C9xfagqPS+u4fm8O8hHeQQYw+ghoXwSSMBM56Zb77v/2fGaESEl4S1eU/gubEuP3wbDOj7/f085/LT8CqTwS+vX2vAD8J3d3e0tbWlzXdaPxeSozb4+pUk+2XHt8GA1pbVxnH4fn//8pLWivCyY0V42bEiPCmCwKejt4d0c9NZiEP5enqT8bi56VDluAIAuGheJLZtnNcJAPqiDwDY398HYwyFwvazHnpmUth1XQCAbduJEw8Cnzjn6Is+8noeANB226hUKsOFeDYIIYiIME2pNz6Q41wSEcH3b8f24/u3lM1t0GibeuMDZXMb1OlcTz2HSYoQgpQVDgKfGud1ym1maXe3SKenNQKAXq+H3GaWSnsl7O4WaRLFfv/tD40xhm6vO41W00FFYd+/pcOjN5TNbSiVUSXHKSxVrtVOhi6R32u1k6F7onVJbktzirLCnHN0u2oqpMXzKGQSA4DSXglu2x3G+dn7s0cxzjlHq+XEOohzrjagisLF4o6yupPEcKdz/SiGxzlD1tdqJ1Qs7jwZw3EuY3+PU1iJsCrZw6M3iYQd55J8/5Y6nWuSCSvJpnKxo4kxLslF26QRVtqHDd1AKMJ0t4QisZ5zjrP3ZzB0A7qhw7vyUC4fPLF/q+WQHC8U4XDsQmFbY4yR67oolw8APJwFQhGCMaZCRW0f1g1dqbNQhIn7qud5+Ofvf7UvX/7SPn/6Uxsl22o5lNvMUlI8Wqb1KJ+4rouqVVXPGyqWlvZTKcXizhObJmXpcfEctWu0v2h4yHrVfVw5S1etqtLiAQ8qRzOvKqRScRaPolDY1qpWFW23PbR+2jNRKMXwj0HoY/ujUqe2bauOP0RcjggCn+J+N00TleMKRChSz/CjUD5p2bYNQzdS23lX3lQXAsu0IEKBxnmdgsCnVsuh0l4pdsxy+UBjjGGSZCWhfFsqFLY1z/NIHkJMywTwkMHbbhsiFDAtc6y90hZLEuCcg3MOQzfgXXno9rqxIWLoBgzLmHxxZ7k8zLNMc+mY6PLwf8LR20NijE2UrCRmegEwD5ye1kiEAp7nTfX8QhHObWbJ0A00m82p35QsFOGL5gXevft1pldCmhCC8vn8i/gzrd/vL2bSmgUrwsuOFeFlx1oms1A700zIZNbxH79t+GJRZbl+AAAAAElFTkSuQmCC" alt="Apple Pay"></span>
+      <span class="payment-badge"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAoCAYAAABAZ4KGAAACIklEQVR4nO2XQUvjUBDH/5F2U3qwSQ8mtigt4m2xbBe8u4jgUY/LFkT8BNIvsVD9BLIIgifBo7AK3hfXEtjLIqXBUk08GHuR1h7Gk8XGbPt8abaQvN/xMZM3/8yb92YkIkJUmBh3AP+TGADYlkVP3e64YwmED/E4NF2XACDWbDYpm81K4w4qSF40SlGpWduyKDI1+9TtRuuCEmLDihAbVmJ+nI/+fiezZTDbK7KOrcJu703fM7bpoWMx++ZSCyhOrSCdzHD1Bdxiz8x9qto/ed0BAA8dC07bZrJ12jbqLQOqrCGdzHDtF+gxzqcK+KStMNuqCW2ondNh+zle+DrGg8inCr0ja7YMGpTB17aVX18H2vohkMy+Dh4ANj9W/pk1NaH12ZYXDyWWDPMwcrHu4AEgncxIa/NlT3uv9aAEB5LZ+8ebN9PFnFqUFFnvW1NkHXNq0fNmdduOgpGLddo2fvwpewped2VxafbbG//7xxvaM7ap/o4njZVAMuu0bexclFBzLvsEu99Hd1Z/357QzkUJQQgFfN7Gw+rq+KqCXKpAX2ZKAxuBmnNJ1btTmC1j6DdVmb+WIzO8NxqN6AzvgBgE2Dgz9+n8+uBdPmpCQ3nxsFe7PN3S0mwJy7kNrkEgUpkVYsOKEBtWhNiwwi3WT4/qBz/7cjcVn6dXJQBUvTtl9lFcTb4i68xzq5LQkJ9ceNmXCzEIhBUhNqwIsWEkHo/hGdJ3sP8TDGNfAAAAAElFTkSuQmCC" alt="Etsy Gift Cards"></span>
     </div>
     <p class="secure-copy">Accepts Etsy Gift Cards and Etsy Credits</p>
     <p class="secure-copy">Etsy keeps your payment information secure.<br>Etsy shops never receive your credit card information.</p>
