@@ -1,6 +1,14 @@
-# Albi Art Store v2
+# Albi Art — albiart.store
 
-Upload these files to the root of the existing `albiart-store` repository and commit to `main`.
-GitHub Pages can continue using `main` / root.
+Static GitHub Pages site for Albi Art.
 
-The product photos in this prototype are cropped from the Etsy screenshots you supplied. Replace them with the original high-resolution product images before the final public launch.
+## Deploy
+- Keep `CNAME` unchanged.
+- Replace the site files in the repository root with this package.
+- Commit and push from GitHub Desktop.
+- GitHub Pages deploys from the `main` branch root.
+
+## Product catalog
+25 current products are grouped into T-Shirts, Hoodies, Sweatshirts and Denim Jackets. Each product card links directly to its Etsy listing where a listing URL was supplied.
+
+No blanket products are included.
