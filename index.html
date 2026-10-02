@@ -252,9 +252,155 @@
 
 <section class="final-cta"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Find a shirt<br><em>that says something.</em></h2></div><a class="button button-light" href="https://albiartbyberostudio.etsy.com" target="_blank" rel="noopener">Shop Albi Art on Etsy</a></section>
 </main>
-<footer class="footer"><div class="footer-brand"><span class="brand-mark">ALBI<span>ART</span></span><p>Original graphics made to stand out.</p></div>
-<div class="footer-links"><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#reviews">Reviews</a><a href="#story">About</a></div>
-<div class="footer-links"><a href="https://albiartbyberostudio.etsy.com" target="_blank" rel="noopener">Etsy</a></div>
-<p class="copyright">© 2026 Albi Art. All rights reserved.</p></footer>
+<style>
+.footer.albiart-footer{
+  background:#0d0d0d;
+  color:#fff;
+  padding:55px 7vw 30px;
+  display:grid;
+  grid-template-columns:2fr 1fr 2fr;
+  gap:50px;
+  border-top:1px solid #292929;
+  align-items:start;
+}
+.albiart-footer .footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.albiart-footer .footer-brand .brand-mark{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:-.07em;
+}
+.albiart-footer .footer-brand .brand-mark span{font-weight:500}
+.albiart-footer .footer-brand p{
+  color:#999;
+  font-size:13px;
+  margin:10px 0 0;
+}
+.albiart-footer .footer-logo{
+  width:86px;
+  height:86px;
+  object-fit:contain;
+  margin-top:22px;
+}
+.albiart-footer .footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  font-size:13px;
+  color:#bbb;
+}
+.albiart-footer .footer-links a:hover{color:#fff}
+.albiart-footer .secure-options{
+  color:#bbb;
+}
+.albiart-footer .secure-title{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.albiart-footer .lock{
+  font-size:20px;
+  line-height:1;
+}
+.albiart-footer .payment-badges{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:11px;
+}
+.albiart-footer .payment-badge{
+  height:40px;
+  min-width:62px;
+  padding:0 10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#f7f7f5;
+  border:1px solid #ddd;
+  border-radius:3px;
+  color:#111;
+  font-size:16px;
+  font-weight:800;
+}
+.albiart-footer .payment-badge.visa{color:#1a3fa0;font-style:italic}
+.albiart-footer .payment-badge.mastercard{
+  font-size:0;
+  position:relative;
+}
+.albiart-footer .payment-badge.mastercard:before,
+.albiart-footer .payment-badge.mastercard:after{
+  content:"";
+  width:21px;
+  height:21px;
+  border-radius:50%;
+  position:absolute;
+}
+.albiart-footer .payment-badge.mastercard:before{background:#e5222e;left:17px}
+.albiart-footer .payment-badge.mastercard:after{background:#f5a000;right:17px;opacity:.92}
+.albiart-footer .payment-badge.apple{font-size:14px}
+.albiart-footer .payment-badge.gift{font-size:19px}
+.albiart-footer .secure-copy{
+  margin:0 0 12px;
+  color:#999;
+  font-size:13px;
+  line-height:1.55;
+}
+.albiart-footer .secure-copy:last-child{margin-bottom:0}
+.albiart-footer .copyright{
+  grid-column:1/-1;
+  color:#666;
+  font-size:10px;
+  margin:25px 0 0;
+  border-top:1px solid #292929;
+  padding-top:20px;
+}
+@media(max-width:650px){
+  .footer.albiart-footer{
+    grid-template-columns:1fr;
+    gap:32px;
+    padding:50px 6vw 28px;
+  }
+  .albiart-footer .copyright{grid-column:1}
+  .albiart-footer .footer-logo{width:78px;height:78px}
+}
+</style>
+<footer class="footer albiart-footer">
+  <div class="footer-brand">
+    <span class="brand-mark">ALBI<span>ART</span></span>
+    <p>Original graphics made to stand out.</p>
+    <img class="footer-logo" src="/assets/logo.png" alt="Albi Art original design logo">
+  </div>
+
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="#shop">Shop</a>
+    <a href="#categories">Categories</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#story">About</a>
+    <a href="https://albiartbyberostudio.etsy.com" target="_blank" rel="noopener">Etsy</a>
+  </nav>
+
+  <div class="secure-options">
+    <div class="secure-title"><span class="lock">🔒</span><span>Secure options</span></div>
+    <div class="payment-badges" aria-label="Payment options">
+      <span class="payment-badge visa">VISA</span>
+      <span class="payment-badge mastercard" aria-label="Mastercard"></span>
+      <span class="payment-badge apple">Pay</span>
+      <span class="payment-badge gift" aria-label="Etsy Gift Cards">🎁</span>
+    </div>
+    <p class="secure-copy">Accepts Etsy Gift Cards and Etsy Credits</p>
+    <p class="secure-copy">Etsy keeps your payment information secure.<br>Etsy shops never receive your credit card information.</p>
+  </div>
+
+  <p class="copyright">© 2026 Albi Art. All rights reserved.</p>
+</footer>
 <script src="/script.js"></script>
 </body></html>
