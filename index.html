@@ -73,6 +73,40 @@
 }
 </style>
 
+
+<style id="albiart-product-layout-fix">
+/* Product grid safeguard: keeps the existing 4-column layout and square product images. */
+.product-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:28px !important;
+  align-items:start;
+}
+.product-card{
+  min-width:0;
+}
+.product-image{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+}
+.product-image img{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  object-fit:cover;
+}
+@media (max-width:800px){
+  .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">Original graphics · Worldwide customers · Shop securely on Etsy</div>
