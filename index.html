@@ -280,7 +280,9 @@
   </a>
   <div class="product-meta"><span>T-Shirts</span><span>Albi Art</span></div>
   <h3>Just Kiss Me We Can Talk Later</h3>
-</article></div></section>
+</article></div>
+<div class="pagination" aria-label="Product pages"></div>
+</section>
 
 <section id="categories" class="category-section"><div class="section category-inner"><div class="section-head"><div><p class="eyebrow">SHOP BY TYPE</p><h2>Find your fit.</h2></div></div>
 <div class="category-grid">
@@ -472,5 +474,103 @@
 
   <p class="copyright">© 2026 Albi Art. All rights reserved.</p>
 </footer>
+
+<style id="pagination-style">
+.pagination{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:48px;min-height:38px;}
+.pagination button{font-family:"DM Sans",sans-serif;background:transparent;border:1px solid #d8d2c8;color:#111;min-width:38px;height:38px;padding:0 11px;border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;transition:opacity .2s,background .2s,color .2s,border-color .2s;}
+.pagination button:hover:not(:disabled){background:#111;color:#fff;border-color:#111;}
+.pagination button.active{background:#111;color:#fff;border-color:#111;}
+.pagination button:disabled{opacity:.3;cursor:default;}
+@media(max-width:650px){.pagination{margin-top:38px;gap:6px;flex-wrap:wrap;}}
+</style>
 <script src="/script.js"></script>
+<script id="pagination-script">
+document.addEventListener('DOMContentLoaded',()=>{
+  const grid=document.querySelector('.product-grid');
+  const pagination=document.querySelector('.pagination');
+  const filters=document.querySelectorAll('.filter');
+  if(!grid||!pagination)return;
+
+  const cards=[...grid.querySelectorAll('.product-card')];
+  const perPage=24;
+  let currentFilter='all';
+  let currentPage=1;
+
+  function getFilteredCards(){
+    return cards.filter(card=>currentFilter==='all'||card.dataset.category===currentFilter);
+  }
+
+  function render(){
+    const visibleCards=getFilteredCards();
+    const pageCount=Math.max(1,Math.ceil(visibleCards.length/perPage));
+    currentPage=Math.min(currentPage,pageCount);
+    const start=(currentPage-1)*perPage;
+    const end=start+perPage;
+
+    cards.forEach(card=>{card.style.display='none';});
+    visibleCards.slice(start,end).forEach(card=>{card.style.display='';});
+
+    pagination.innerHTML='';
+    if(pageCount<=1)return;
+
+    const prev=document.createElement('button');
+    prev.type='button';
+    prev.textContent='←';
+    prev.setAttribute('aria-label','Previous page');
+    prev.disabled=currentPage===1;
+    prev.addEventListener('click',()=>{
+      if(currentPage>1){currentPage--;render();scrollToProducts();}
+    });
+    pagination.appendChild(prev);
+
+    for(let i=1;i<=pageCount;i++){
+      const button=document.createElement('button');
+      button.type='button';
+      button.textContent=i;
+      button.setAttribute('aria-label',`Page ${i}`);
+      if(i===currentPage){
+        button.classList.add('active');
+        button.setAttribute('aria-current','page');
+      }
+      button.addEventListener('click',()=>{
+        currentPage=i;
+        render();
+        scrollToProducts();
+      });
+      pagination.appendChild(button);
+    }
+
+    const next=document.createElement('button');
+    next.type='button';
+    next.textContent='→';
+    next.setAttribute('aria-label','Next page');
+    next.disabled=currentPage===pageCount;
+    next.addEventListener('click',()=>{
+      if(currentPage<pageCount){currentPage++;render();scrollToProducts();}
+    });
+    pagination.appendChild(next);
+  }
+
+  function scrollToProducts(){
+    const shop=document.querySelector('#shop');
+    if(shop){
+      const top=shop.getBoundingClientRect().top+window.scrollY-110;
+      window.scrollTo({top,behavior:'smooth'});
+    }
+  }
+
+  filters.forEach(filter=>{
+    filter.addEventListener('click',()=>{
+      currentFilter=filter.dataset.filter||'all';
+      currentPage=1;
+      filters.forEach(item=>item.classList.toggle('active',item===filter));
+      render();
+      scrollToProducts();
+    });
+  });
+
+  render();
+});
+</script>
+
 </body></html>
