@@ -1,14 +1,17 @@
-# Albi Art — albiart.store
+# Albi Art SEO/indexing update
 
-Static GitHub Pages site for Albi Art.
+This update keeps the existing homepage design and styling intact.
 
-## Deploy
-- Keep `CNAME` unchanged.
-- Replace the site files in the repository root with this package.
-- Commit and push from GitHub Desktop.
-- GitHub Pages deploys from the `main` branch root.
+Changes:
+- Homepage product cards now point to local Albi Art product pages instead of directly to Etsy.
+- 44 individual product pages were added under /products/.
+- Each product page has its own title, meta description, canonical URL, Open Graph data and Product structured data.
+- sitemap.xml now contains the homepage plus all 44 product URLs.
+- robots.txt continues to reference the sitemap.
 
-## Product catalog
-25 current products are grouped into T-Shirts, Hoodies, Sweatshirts and Denim Jackets. Each product card links directly to its Etsy listing where a listing URL was supplied.
-
-No blanket products are included.
+Deploy:
+1. Replace the repository files with this package.
+2. Keep CNAME unchanged.
+3. Commit and push to GitHub Pages.
+4. In Google Search Console, resubmit https://albiart.store/sitemap.xml.
+5. Inspect https://albiart.store/ and a few /products/.../ URLs and request indexing for the homepage and key product pages.
