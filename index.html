@@ -116,6 +116,26 @@
 }
 </style>
 
+
+<style id="albiart-mobile-hero-fix">
+/* Mobile only: preserve the complete wide banner without cropping.
+   Desktop layout remains unchanged. */
+@media (max-width: 650px) {
+  .hero {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden;
+  }
+  .hero-image {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
+</style>
 </head>
 <body>
 <div class="announcement">Original graphics · Worldwide customers · Shop securely on Etsy</div>
