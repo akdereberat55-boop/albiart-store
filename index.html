@@ -85,6 +85,37 @@
 .product-image img{display:block;width:100% !important;height:100% !important;max-width:100% !important;object-fit:cover;}
 @media(max-width:800px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:18px !important;}}
 </style>
+
+<style id="albiart-branding-final-fix">
+/* The new banner already contains its own typography and layout. */
+.hero-overlay,
+.hero-content {
+  display: none !important;
+}
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* Show the supplied logo in full color instead of the old founder portrait. */
+.story-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.story-photo img {
+  width: 100% !important;
+  max-width: 360px !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  display: block;
+  filter: none !important;
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">Original graphics · Worldwide customers · Shop securely on Etsy</div>
